@@ -3,10 +3,11 @@ image:
 
 tasks:
   - init: |
-      conda env create -f environment.yml || echo "Conda environment already exists"
-      conda activate my-conda-env
+      export PATH=$HOME/miniconda/bin:$PATH
+      conda env create -f environment.yml
   - command: |
-      python --version
+      export PATH=$HOME/miniconda/bin:$PATH
+      conda activate my-conda-env && python --version
 
 ports:
   - port: 8888
