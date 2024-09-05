@@ -7,4 +7,4 @@ dependencies:
   - conda-forge::python=3.6 # Locked with the container
   - conda-forge::pip
   - pip:
-      - hmtnote==0.7.2
+    - hmtnote==0.7.2
