@@ -3,9 +3,10 @@ image:
 
 tasks:
   - init: |
-      conda env create -f environment.yml
+      conda env create -f environment.yml || echo "Conda environment already exists"
       conda activate my-conda-env
-  - command: python --version
+  - command: |
+      python --version
 
 ports:
   - port: 8888
