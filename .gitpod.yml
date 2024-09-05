@@ -1,8 +1,16 @@
-name: my-conda-env
-channels:
-  - conda-forge
-dependencies:
-  - python=3.9
-  - numpy
-  - pandas
-  - matplotlib
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      conda env create -f environment.yml
+      conda activate my-conda-env
+  - command: python --version
+
+ports:
+  - port: 8888
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-python.python
